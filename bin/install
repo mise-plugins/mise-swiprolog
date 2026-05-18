@@ -67,9 +67,6 @@ curl -Lo "$source_path" "$download_url"
       -DSWIPL_PACKAGES_X=OFF \
       -DSWIPL_PACKAGES_JAVA=OFF \
       ..
-      
-    make
-    make install
   else
     ./configure \
         --prefix="$ASDF_INSTALL_PATH" \
@@ -77,8 +74,8 @@ curl -Lo "$source_path" "$download_url"
         --without-jpl \
         --without-xpce \
         --disable-libdirversion
-        
-    make
-    make install
   fi
+
+  make
+  make install
 )
